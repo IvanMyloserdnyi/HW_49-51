@@ -1,0 +1,14 @@
+
+.app {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+.app_wrapper {
+  display: grid;
+  grid-template-areas: 'header' 'main' 'footer';
+  text-align: center;
+  width: 1366px;
+}
