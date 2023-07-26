@@ -1,18 +1,23 @@
-import './App.css';
-import './fonts.css';
-import {Header} from "./compontnts/header/Header";
-import {Footer} from "./compontnts/footer/Footer";
-import {Main} from "./compontnts/main/Main";
-import {BrowserRouter} from "react-router-dom";
+import './App.css'
+import {Header} from "./components/header/Header";
+import {Navbar} from "./components/navbar/Navbar";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {SmileVotes} from "./components/tasks/task1/FirstTask";
+import {ToDoList} from "./components/tasks/task_2/SecondTask";
+import {UsersList} from "./components/tasks/task_3/ThirdTask";
 
 function App() {
     return (
         <BrowserRouter>
             <div className='app'>
-                <div className='app_wrapper'>
-                    <Header/>
-                    <Main/>
-                    <Footer/>
+                <Header/>
+                <Navbar/>
+                <div className='main'>
+                    <Routes>
+                        <Route index path='/task_1' element={<SmileVotes/>}/>
+                        <Route path='/task_2' element={<ToDoList/>}/>
+                        <Route path='/task_3/*' element={<UsersList/>}/>
+                    </Routes>
                 </div>
             </div>
         </BrowserRouter>
